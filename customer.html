@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customers - CRM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         DASHBOARD LAYOUT
+    ========================== -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                CRM
+            </div>
+
+            <p class="sidebar-title">
+                CUSTOMER MANAGEMENT
+            </p>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="customers.html">
+                        👥 Customers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacts.html">
+                        📞 Contacts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tasks.html">
+                        📋 Tasks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        📊 Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- LOGOUT -->
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                >
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Customers
+                    </h1>
+
+                    <p>
+                        Manage your CRM customers
+                    </p>
+
+                </div>
+
+
+                <!-- USER -->
+
+                <div class="user-info">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <small>
+                            CRM User
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 CUSTOMER ACTIONS
+            ========================== -->
+
+            <section class="customer-actions">
+
+                <div>
+
+                    <h2>
+                        Customer List
+                    </h2>
+
+                    <p>
+                        Add and manage your customers.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addCustomerButton"
+                >
+                    + Add Customer
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SEARCH
+            ========================== -->
+
+            <section class="customer-search">
+
+                <input
+                    type="text"
+                    id="searchCustomer"
+                    placeholder="Search customers..."
+                    autocomplete="off"
+                >
+
+            </section>
+
+
+
+            <!-- =========================
+                 CUSTOMER TABLE
+            ========================== -->
+
+            <section class="customer-table-container">
+
+                <table class="customer-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Phone</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="customerTableBody">
+
+                        <!-- Customers loaded by customers.js -->
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+         CUSTOMER MODAL
+    ========================== -->
+
+    <div
+        class="modal"
+        id="customerModal"
+    >
+
+        <div class="modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <h2>
+                    Add Customer
+                </h2>
+
+                <button
+                    type="button"
+                    class="close-button"
+                    id="closeModal"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <!-- CUSTOMER FORM -->
+
+            <form id="customerForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="Enter customer email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Enter customer phone"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="customerStatus">
+                        Status
+                    </label>
+
+                    <select id="customerStatus">
+
+                        <option value="Lead">
+                            Lead
+                        </option>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelCustomer"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Save Customer
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         CUSTOMERS JAVASCRIPT
+    ========================== -->
+
+    <script src="js/customers.js"></script>
+
+
+    <!-- =========================
+         CANCEL BUTTON
+    ========================== -->
+
+    <script>
+
+        const cancelCustomer =
+            document.getElementById("cancelCustomer");
+
+        const customerModal =
+            document.getElementById("customerModal");
+
+        if (cancelCustomer) {
+
+            cancelCustomer.addEventListener(
+                "click",
+                function () {
+
+                    customerModal.classList.remove("show");
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

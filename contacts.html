@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacts - CRM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                CRM
+            </div>
+
+            <p class="sidebar-title">
+                CUSTOMER MANAGEMENT
+            </p>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customers.html">
+                        👥 Customers
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="contacts.html">
+                        📞 Contacts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tasks.html">
+                        📋 Tasks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        📊 Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-bottom">
+
+                <button id="logoutButton">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Contacts
+                    </h1>
+
+                    <p>
+                        Track customer interactions
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <small>
+                            CRM User
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTACT ACTIONS -->
+
+            <section class="customer-actions">
+
+                <div>
+
+                    <h2>
+                        Contact History
+                    </h2>
+
+                    <p>
+                        Record calls, emails and meetings.
+                    </p>
+
+                </div>
+
+                <button
+                    class="auth-button"
+                    id="addContactButton"
+                >
+                    + Add Contact
+                </button>
+
+            </section>
+
+
+            <!-- SEARCH -->
+
+            <section class="customer-search">
+
+                <input
+                    type="text"
+                    id="searchContact"
+                    placeholder="Search contacts..."
+                >
+
+            </section>
+
+
+            <!-- CONTACT TABLE -->
+
+            <section class="customer-table-container">
+
+                <table class="customer-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Notes
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="contactTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- CONTACT MODAL -->
+
+    <div
+        class="modal"
+        id="contactModal"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Add Contact
+                </h2>
+
+                <button
+                    type="button"
+                    id="closeModal"
+                    class="close-button"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <input
+                    type="hidden"
+                    id="contactId"
+                >
+
+
+                <!-- Customer -->
+
+                <div class="form-group">
+
+                    <label for="contactCustomer">
+                        Customer
+                    </label>
+
+                    <select
+                        id="contactCustomer"
+                        required
+                    >
+
+                        <option value="">
+                            Select customer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Type -->
+
+                <div class="form-group">
+
+                    <label for="contactType">
+                        Contact Type
+                    </label>
+
+                    <select id="contactType">
+
+                        <option value="Call">
+                            📞 Call
+                        </option>
+
+                        <option value="Email">
+                            📧 Email
+                        </option>
+
+                        <option value="Meeting">
+                            🤝 Meeting
+                        </option>
+
+                        <option value="Other">
+                            📝 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="contactDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="contactDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Subject -->
+
+                <div class="form-group">
+
+                    <label for="contactSubject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contactSubject"
+                        placeholder="Contact subject"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Notes -->
+
+                <div class="form-group">
+
+                    <label for="contactNotes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="contactNotes"
+                        rows="4"
+                        placeholder="Enter notes..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+                    Save Contact
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/contacts.js"></script>
+
+</body>
+
+</html>

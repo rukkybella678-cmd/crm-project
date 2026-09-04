@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - CRM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                CRM
+            </div>
+
+            <p class="sidebar-title">
+                CUSTOMER MANAGEMENT
+            </p>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customers.html">
+                        👥 Customers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacts.html">
+                        📞 Contacts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tasks.html">
+                        📋 Tasks
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="reports.html">
+                        📊 Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-bottom">
+
+                <button id="logoutButton">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+            <!-- Header -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Reports
+                    </h1>
+
+                    <p>
+                        View your CRM performance
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <small>
+                            CRM User
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 SUMMARY
+            ========================== -->
+
+            <section class="statistics">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <p>Total Customers</p>
+
+                        <h2 id="reportCustomers">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <p>Total Interactions</p>
+
+                        <h2 id="reportInteractions">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>Total Tasks</p>
+
+                        <h2 id="reportTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <p>Completed Tasks</p>
+
+                        <h2 id="reportCompleted">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CUSTOMER REPORT
+            ========================== -->
+
+            <section class="report-section">
+
+                <h2>
+                    Customer Overview
+                </h2>
+
+
+                <div class="report-grid">
+
+                    <div class="report-box">
+
+                        <h3>
+                            Active Customers
+                        </h3>
+
+                        <p id="activeCustomers">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            Leads
+                        </h3>
+
+                        <p id="leadCustomers">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            Inactive Customers
+                        </h3>
+
+                        <p id="inactiveCustomers">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 TASK REPORT
+            ========================== -->
+
+            <section class="report-section">
+
+                <h2>
+                    Task Overview
+                </h2>
+
+
+                <div class="report-grid">
+
+                    <div class="report-box">
+
+                        <h3>
+                            Pending
+                        </h3>
+
+                        <p id="pendingTasksReport">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            In Progress
+                        </h3>
+
+                        <p id="progressTasksReport">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            Completed
+                        </h3>
+
+                        <p id="completedTasksReport">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INTERACTION REPORT
+            ========================== -->
+
+            <section class="report-section">
+
+                <h2>
+                    Interaction Overview
+                </h2>
+
+
+                <div class="report-grid">
+
+                    <div class="report-box">
+
+                        <h3>
+                            📞 Calls
+                        </h3>
+
+                        <p id="callCount">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            📧 Emails
+                        </h3>
+
+                        <p id="emailCount">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            🤝 Meetings
+                        </h3>
+
+                        <p id="meetingCount">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-box">
+
+                        <h3>
+                            📝 Other
+                        </h3>
+
+                        <p id="otherCount">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/reports.js"></script>
+
+</body>
+
+</html>
