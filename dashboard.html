@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - CRM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         DASHBOARD LAYOUT
+    ========================== -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                CRM
+            </div>
+
+            <p class="sidebar-title">
+                CUSTOMER MANAGEMENT
+            </p>
+
+            <ul class="sidebar-menu">
+
+                <!-- Dashboard -->
+                <li class="active">
+                    <a href="dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+
+                <!-- Customers -->
+                <li>
+                    <a href="customers.html">
+                        👥 Customers
+                    </a>
+                </li>
+
+
+                <!-- Contacts -->
+                <li>
+                    <a href="contacts.html">
+                        📞 Contacts
+                    </a>
+                </li>
+
+
+                <!-- Tasks -->
+                <li>
+                    <a href="tasks.html">
+                        📋 Tasks
+                    </a>
+                </li>
+
+
+                <!-- Reports -->
+                <li>
+                    <a href="reports.html">
+                        📊 Reports
+                    </a>
+                </li>
+
+
+                <!-- Settings -->
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- =========================
+                 LOGOUT
+            ========================== -->
+
+            <div class="sidebar-bottom">
+
+                <button id="logoutButton">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =========================
+                 TOP BAR
+            ========================== -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Welcome back to your CRM
+                    </p>
+
+                </div>
+
+
+                <!-- USER INFORMATION -->
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <small>
+                            CRM User
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <section class="statistics">
+
+
+                <!-- TOTAL CUSTOMERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Customers
+                        </p>
+
+                        <h2 id="totalCustomers">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NEW CUSTOMERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🆕
+                    </div>
+
+                    <div>
+
+                        <p>
+                            New Customers
+                        </p>
+
+                        <h2 id="newCustomers">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INTERACTIONS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Interactions
+                        </p>
+
+                        <h2 id="totalInteractions">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PENDING TASKS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Pending Tasks
+                        </p>
+
+                        <h2 id="pendingTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+    ========================== -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
